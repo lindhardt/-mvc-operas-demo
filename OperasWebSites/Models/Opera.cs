@@ -22,6 +22,7 @@ namespace OperasWebSites.Models
         public string Composer { get; set; }
     }
 
+    [AttributeUsage(AttributeTargets.Property)]
     public class CheckValidYear : ValidationAttribute
     {
         public CheckValidYear()
@@ -31,9 +32,15 @@ namespace OperasWebSites.Models
 
         public override bool IsValid(object value)
         {
-            int year = (int)value;
-
-            return year >= 1598;
+            try
+            {
+                int year = (int)value;
+                return year >= 1598;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("Exception casting value to int", e);
+            }
         }
     }
 }
