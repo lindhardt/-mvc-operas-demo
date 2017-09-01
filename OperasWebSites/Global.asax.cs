@@ -18,5 +18,7 @@ namespace OperasWebSites
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        
     }
 }
