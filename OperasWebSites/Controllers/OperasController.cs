@@ -32,6 +32,13 @@ namespace OperasWebSites.Controllers
             {
                 return HttpNotFound();
             }
+
+            // MVC 4 +
+            ViewBag.OperaTitle = opera.Title;
+
+            // MVC 3 -
+            ViewData["OperaTitle"] = opera.Title;
+
             return View(opera);
         }
 
