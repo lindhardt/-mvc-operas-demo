@@ -12,6 +12,8 @@
     <title>Index</title>
 </head>
 <body>
+    Menu: @Html.MvcSiteMap().Menu(false, false, true)
+    Breadcrumb: @Html.MvcSiteMap().SiteMapPath()
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>

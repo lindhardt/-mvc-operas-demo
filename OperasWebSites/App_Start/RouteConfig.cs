@@ -14,6 +14,27 @@ namespace OperasWebSites
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "testRoute",
+                url: "opera/title/{id}",
+                defaults: new
+                {
+                    controller = "Opera",
+                    action = "Details"
+                   
+                },
+                constraints: new { id = "[0-9]+"}
+                );
+
+            routes.MapRoute(
+                name: "OperaByTitleRoute",
+                url: "opera/title/{title}",
+                defaults: new
+                {
+                    controller = "Opera",
+                    action = "DetailsByTitle"
+                });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

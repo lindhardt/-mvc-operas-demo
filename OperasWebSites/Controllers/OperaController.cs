@@ -51,5 +51,19 @@ namespace OperasWebSites.Controllers
 
             return View("Create", newOpera);
         }
+
+        public ActionResult DetailsByTitle(string title)
+        {
+            Opera opera = (Opera)(from o in _contextDB.Operas
+                                  where o.Title == title
+                                  select o).FirstOrDefault();
+
+            if(opera == null )
+            {
+                return HttpNotFound();
+            }
+
+            return View("Details", opera);
+        }
     }
 }
