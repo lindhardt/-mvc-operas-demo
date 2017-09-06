@@ -10,60 +10,60 @@ namespace OperasWebSites.Controllers
 {
     public class OperaController : Controller
     {
-        private OperasDB _contextDB = new OperasDB();
+        private OperasDB contextDB = new OperasDB();
 
-        // GET: Opera
+        //
+        // GET: /Opera/
+
         public ActionResult Index()
         {
-            return View("Index", _contextDB.Operas.ToList());
+            return View("Index", contextDB.Operas.ToList());
         }
 
-        // GET: Opera Details
         public ActionResult Details(int id)
         {
-            Opera opera = _contextDB.Operas.Find(id);
-
+            Opera opera = contextDB.Operas.Find(id);
             if (opera != null)
             {
                 return View("Details", opera);
             }
-
-            return HttpNotFound();
+            else
+            {
+                return HttpNotFound();
+            }
         }
 
-        // GET: Create new Opera
+        public ActionResult DetailsByTitle(string title)
+        {
+            Opera opera = (Opera)(from o in contextDB.Operas
+                                  where o.Title == title
+                                  select o).FirstOrDefault();
+            if (opera == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Details", opera);
+        }
+
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
             return View("Create", newOpera);
         }
 
-        // POST: Post form for new Opera
         [HttpPost]
-        public ActionResult Create( Opera newOpera )
+        public ActionResult Create(Opera newOpera)
         {
-            if( ModelState.IsValid )
+            if (ModelState.IsValid)
             {
-                _contextDB.Operas.Add(newOpera);
-                _contextDB.SaveChanges();
+                contextDB.Operas.Add(newOpera);
+                contextDB.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View("Create", newOpera);
-        }
-
-        public ActionResult DetailsByTitle(string title)
-        {
-            Opera opera = (Opera)(from o in _contextDB.Operas
-                                  where o.Title == title
-                                  select o).FirstOrDefault();
-
-            if(opera == null )
+            else
             {
-                return HttpNotFound();
+                return View("Create", newOpera);
             }
-
-            return View("Details", opera);
         }
     }
 }

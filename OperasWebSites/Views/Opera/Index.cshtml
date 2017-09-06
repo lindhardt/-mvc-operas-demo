@@ -1,31 +1,24 @@
 ﻿@model IEnumerable<OperasWebSites.Models.Opera>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index of Operas";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    Menu: @Html.MvcSiteMap().Menu(false, false, true)
-    Breadcrumb: @Html.MvcSiteMap().SiteMapPath()
+    <h2>
+        Main Opera List
+    </h2>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table class="table">
-        <tr>
-            <th>
+    <table style="width: 600px;">
+        <tr style="background-color: lightgrey;">
+            <th style="width: 200px;">
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th>
+            <th style="width: 100px;">
                 @Html.DisplayNameFor(model => model.Year)
             </th>
-            <th>
+            <th style="width: 300px;">
                 @Html.DisplayNameFor(model => model.Composer)
             </th>
             <th></th>
@@ -43,13 +36,9 @@
                 @Html.DisplayFor(modelItem => item.Composer)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.OperaID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.OperaID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.OperaID })
+                @Html.ActionLink("Details", "Details", new { id=item.OperaID })
             </td>
         </tr>
     }
     
     </table>
-</body>
-</html>

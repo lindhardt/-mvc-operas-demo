@@ -1,41 +1,43 @@
 ﻿@model OperasWebSites.Models.Opera
 
 @{
-    Layout = null;
+    ViewBag.Title = "Create an Opera";
 }
 
-<!DOCTYPE html>
+        <h2>Add an Opera</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create an Opera</title>
-</head>
-<body>
-    <div>
-        <h2>Create an Opera</h2>
-        @Html.ValidationSummary()
         @using (Html.BeginForm("Create", "Opera", FormMethod.Post))
         {
-            <p>
-                @Html.LabelFor(model => model.Title)
-                @Html.EditorFor(model => model.Title)
-                @Html.ValidationMessageFor(model => model.Title)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Year):
-                @Html.EditorFor(model => model.Year)
-                @Html.ValidationMessageFor(model => model.Year)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Composer):
-                @Html.EditorFor(model => model.Composer)
-                @Html.ValidationMessageFor(model => model.Composer)
-            </p>
-
+            <div>
+                <span class="editor-label">
+                    @Html.LabelFor(model => model.Title):
+                </span>
+                <span class="editor-field">
+                    @Html.EditorFor(model  => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title)
+                </span>
+            </div>
+            
+            <div>
+                <span class="editor-label">
+                    @Html.LabelFor(model => model.Year):
+                </span>
+                <span class="editor-field">
+                    @Html.EditorFor(model => model.Year)
+                    @Html.ValidationMessageFor(model => model.Year)
+                </span>
+            </div>
+            
+            <div>
+                <span class="editor-label">
+                    @Html.LabelFor(model => model.Composer):
+                </span>
+                <span>
+                    @Html.EditorFor(model => model.Composer)
+                    @Html.ValidationMessageFor(model => model.Composer)
+                </span>
+            </div>
+            
             <input type="submit" value="Create" />
             @Html.ActionLink("Back to List", "Index")
         }
-    </div>
-</body>
-</html>

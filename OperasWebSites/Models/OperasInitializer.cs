@@ -17,6 +17,21 @@ namespace OperasWebSites.Models
                     Title = "Cosi Fan Tutte",
                     Year = 1790,
                     Composer = "Mozart"
+                },
+                new Opera {
+                    Title = "Rigoletto",
+                    Year = 1851,
+                    Composer = "Giuseppe Verdi",
+                },
+                new Opera {
+                    Title = "Nixon in China",
+                    Year = 1987,
+                    Composer = "John Adams"
+                },
+                new Opera {
+                    Title = "Wozzeck",
+                    Year = 1922,
+                    Composer = "Alban Berg"
                 }
             };
 

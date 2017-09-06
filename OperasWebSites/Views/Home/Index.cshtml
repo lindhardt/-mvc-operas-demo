@@ -1,6 +1,4 @@
-﻿@model OperasWebSites.Models.Opera
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -9,12 +7,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Operas I Have Seen</title>
 </head>
 <body>
-    <div> 
-        Menu: @Html.MvcSiteMap().Menu(false, false, true)
-        Breadcrumb: @Html.MvcSiteMap().SiteMapPath()
+    <div>
+        <h1>Operas I Have Seen</h1>
+        <div class="topmenu">
+            @Html.MvcSiteMap().Menu(false, true, true)
+        </div>
+        <div class="clear-floats" />
+        <div class="breadcrumb"></div>
+            Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
+        </div>
+        
+        <p>
+            Welcome! On this site I'm going to discuss my hobby: listening
+            to opera. Start by looking at the 
+            @Html.ActionLink("operas I've seen.", "Index", "Opera")
+        </p>
     </div>
 </body>
 </html>
