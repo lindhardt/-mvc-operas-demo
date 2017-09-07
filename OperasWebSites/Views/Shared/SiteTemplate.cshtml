@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/OperasStyles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div> 
+        <div class="topmenu">
+            @Html.MvcSiteMap().Menu(false, true, true)
+        </div>
+        <div class="clear-floats">
+            <div class="breadcrumb">
+                Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
