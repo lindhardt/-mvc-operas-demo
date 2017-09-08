@@ -13,12 +13,19 @@ namespace OperasWebSites.Controllers
 
         public ActionResult Index()
         {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
             return View("Index");
         }
 
         public ActionResult About()
         {
             return View("");
+        }
+
+        [HttpGet]
+        public PartialViewResult _MyRefresh()
+        {
+            return PartialView("_MyRefresh");
         }
 
     }

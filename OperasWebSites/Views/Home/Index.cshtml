@@ -1,12 +1,36 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Home";
 }
-    <div>
-        <h1>Operas I Have Seen</h1>
-        
-        <p>
-            Welcome! On this site I'm going to discuss my hobby: listening
-            to opera. Start by looking at the 
-            @Html.ActionLink("operas I've seen.", "Index", "Opera")
-        </p>
-    </div>
+<div>
+    <h1>Operas I Have Seen</h1>
+
+    <p>
+        Welcome! On this site I'm going to discuss my hobby: listening
+        to opera. Start by looking at the
+        @Html.ActionLink("operas I've seen.", "Index", "Opera")
+    </p>
+
+    <div id="MyRefresh"></div>
+    <input type="button" onclick="loadPartialView()" value="Refresh"/>
+    <script>
+        function loadPartialView() {
+            $.ajax({
+                url:      "@Url.Action("_MyRefresh", "Home")",
+                type:     'GET',   // <-- make a async request by GET
+                dataType: 'html' , // <-- to expect an html response
+                success: function (result)
+                {
+                    $('#MyRefresh').html(result);
+                }
+            });
+        }
+        $(function () {
+
+            loadPartialView(); // first time
+
+            // re-call the function each 5 seconds
+            window.setInterval("loadPartialView()", 10000);
+
+        });
+    </script>
+</div>
