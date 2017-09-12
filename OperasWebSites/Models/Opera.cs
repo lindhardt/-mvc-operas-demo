@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,9 @@ namespace OperasWebSites.Models
         public int Year { get; set; }
 
         public string Composer { get; set; }
+
+        [DisplayName("Created by")]
+        public string CreatedBy { get; set; }
     }
 
     [AttributeUsage(AttributeTargets.Property)]

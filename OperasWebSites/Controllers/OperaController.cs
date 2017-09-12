@@ -46,6 +46,7 @@ namespace OperasWebSites.Controllers
             return View("Details", opera);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
@@ -53,10 +54,12 @@ namespace OperasWebSites.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(Opera newOpera)
         {
             if (ModelState.IsValid)
             {
+                newOpera.CreatedBy = User.Identity.Name;
                 contextDB.Operas.Add(newOpera);
                 contextDB.SaveChanges();
                 Response.RemoveOutputCacheItem(Url.Action("Index"));
