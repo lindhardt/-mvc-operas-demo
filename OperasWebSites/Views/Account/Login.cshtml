@@ -10,6 +10,7 @@
 </hgroup>
 
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
 
     <div>

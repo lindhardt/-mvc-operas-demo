@@ -26,6 +26,7 @@ namespace OperasWebSites.Controllers
         // POST: /Account/Login
         [AllowAnonymous]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid)
