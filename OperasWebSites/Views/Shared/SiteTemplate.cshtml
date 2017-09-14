@@ -10,7 +10,7 @@
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <title>@ViewBag.Title</title>
 </head>
-<body>
+<body style="@Html.Action("GetBackground", "Home")">
     <div> 
         <div class="topmenu">
             @Html.MvcSiteMap().Menu(false, true, true)

@@ -2,6 +2,12 @@
     ViewBag.Title = "Home";
 }
 <div>
+    <p>
+        Choose a background color:
+        @Html.ActionLink("Pink", "SetBackground", new { color = "#dc9797" })
+        @Html.ActionLink("Blue", "SetBackground", new { color = "#82bbf2" })
+    </p>
+
     <h1>Operas I Have Seen</h1>
 
     <p>
