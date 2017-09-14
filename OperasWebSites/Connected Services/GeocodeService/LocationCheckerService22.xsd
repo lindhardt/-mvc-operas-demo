@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/search/local/ws/rest/v1" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/search/local/ws/rest/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58816/LocationCheckerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" />
+  <xs:import schemaLocation="http://localhost:58816/LocationCheckerService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Location">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q1:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" nillable="true" type="q1:Address">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="confidence" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="geocodePoints" nillable="true" type="q1:ArrayOfPoint">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="matchCodes" nillable="true" type="q2:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="point" nillable="true" type="q1:Point">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="queryParseValues" nillable="true" type="q1:ArrayOfQueryParseValue">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="Route">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q3:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="distanceUnit" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="durationUnit" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="routeLegs" nillable="true" type="q3:ArrayOfRouteLeg">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="routePath" nillable="true" type="q3:RoutePath">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="trafficCongestion" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="trafficDataUsed" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="travelDistance" type="xs:double">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="travelDuration" type="xs:double">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="travelDurationTraffic" type="xs:double">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Route" nillable="true" type="tns:Route" />
+  <xs:complexType name="TrafficIncident">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q4:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="congestion" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="detour" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="end" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="incidentId" type="xs:long">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lane" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lastModified" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="locationCodes" nillable="true" type="q5:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="point" nillable="true" type="q4:Point">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="roadClosed" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="severity" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="start" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="toPoint" nillable="true" type="q4:Point">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="type" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="verified" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrafficIncident" nillable="true" type="tns:TrafficIncident" />
+  <xs:complexType name="ImageryMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q6:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imageHeight" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="imageUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="imageUrlSubdomains" nillable="true" type="q7:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="imageWidth" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="imageryProviders" nillable="true" type="q6:ArrayOfImageryProvider">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="vintageEnd" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="vintageStart" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zoomMax" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zoomMin" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageryMetadata" nillable="true" type="tns:ImageryMetadata" />
+  <xs:complexType name="StaticMapMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ImageryMetadata">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" minOccurs="0" name="mapCenter" nillable="true" type="q8:Point">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pushpins" nillable="true" type="tns:ArrayOfPushpinMetdata">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zoom" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StaticMapMetadata" nillable="true" type="tns:StaticMapMetadata" />
+  <xs:complexType name="ArrayOfPushpinMetdata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PushpinMetdata" nillable="true" type="tns:PushpinMetdata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPushpinMetdata" nillable="true" type="tns:ArrayOfPushpinMetdata" />
+  <xs:complexType name="PushpinMetdata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="anchor" nillable="true" type="tns:Pixel">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="bottomRightOffset" nillable="true" type="tns:Pixel">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" minOccurs="0" name="point" nillable="true" type="q9:Point">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="topLeftOffset" nillable="true" type="tns:Pixel">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PushpinMetdata" nillable="true" type="tns:PushpinMetdata" />
+  <xs:complexType name="Pixel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="x" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="y" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pixel" nillable="true" type="tns:Pixel" />
+  <xs:complexType name="BirdseyeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ImageryMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orientation" type="xs:double">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="tilesX" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="tilesY" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BirdseyeMetadata" nillable="true" type="tns:BirdseyeMetadata" />
+  <xs:complexType name="ElevationData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q10:Resource">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="elevations" nillable="true" type="q11:ArrayOfint">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zoomLevel" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElevationData" nillable="true" type="tns:ElevationData" />
+  <xs:complexType name="SeaLevelData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q12:Resource">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsets" nillable="true" type="q13:ArrayOfint">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zoomLevel" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeaLevelData" nillable="true" type="tns:SeaLevelData" />
+  <xs:complexType name="CompressedPointList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q14:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="value" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompressedPointList" nillable="true" type="tns:CompressedPointList" />
+  <xs:complexType name="GeospatialEndpointResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/BingMapsRESTToolkit" base="q15:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isDisputedArea" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="isSupported" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="services" nillable="true" type="q15:ArrayOfGeospatialService">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeospatialEndpointResponse" nillable="true" type="tns:GeospatialEndpointResponse" />
+</xs:schema>

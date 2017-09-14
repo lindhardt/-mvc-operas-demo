@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using OperasWebSites.Models;
 using System.Web.UI;
+using OperasWebSites.GeocodeService;
+using BingMapsRESTToolkit;
 
 namespace OperasWebSites.Controllers
 {
@@ -26,6 +28,26 @@ namespace OperasWebSites.Controllers
             Opera opera = contextDB.Operas.Find(id);
             if (opera != null)
             {
+                LocationCheckerServiceClient client = null;
+
+                Location response = null;
+
+                try
+                {
+                    client = new LocationCheckerServiceClient();
+                    response = client.GetLocation("Copenhagen");
+
+                    var coor = response.GeocodePoints.FirstOrDefault().GetCoordinate();
+
+                    opera.GeocodeResult = "" + coor.Longitude +":" + coor.Latitude;
+
+                }
+                catch ( Exception e)
+                {
+                    opera.GeocodeResult = "Error: " + e.Message;
+                }
+
+
                 return View("Details", opera);
             }
             else

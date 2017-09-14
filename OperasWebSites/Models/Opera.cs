@@ -24,6 +24,8 @@ namespace OperasWebSites.Models
 
         [DisplayName("Created by")]
         public string CreatedBy { get; set; }
+
+        public string GeocodeResult { get; set; }
     }
 
     [AttributeUsage(AttributeTargets.Property)]

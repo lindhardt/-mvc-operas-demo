@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58816/LocationCheckerService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/search/local/ws/rest/v1" />
+  <xs:element name="GetLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/search/local/ws/rest/v1" minOccurs="0" name="GetLocationResult" nillable="true" type="q1:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

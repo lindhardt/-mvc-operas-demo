@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c21959b8-1b93-46f2-91b2-32232fbe98db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58816/LocationCheckerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LocationCheckerService.wsdl" MetadataType="Wsdl" ID="3ef24877-8724-4180-b8ee-dab5fd6fc7b7" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?wsdl" />
+    <MetadataFile FileName="LocationCheckerService2.xsd" MetadataType="Schema" ID="a2ff7722-7a67-416e-972f-7915f3c87b02" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="LocationCheckerService.disco" MetadataType="Disco" ID="6b570baa-ba81-45c6-9a83-7e424cd827b3" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?disco" />
+    <MetadataFile FileName="LocationCheckerService.xsd" MetadataType="Schema" ID="d1ae5184-7f78-4812-8399-7f0d19901452" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LocationCheckerService1.xsd" MetadataType="Schema" ID="11c3fa99-320f-4ff0-843e-1ade05a49581" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LocationCheckerService21.xsd" MetadataType="Schema" ID="e5fc200a-029d-4ae3-94fb-ceaff0dc9597" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LocationCheckerService22.xsd" MetadataType="Schema" ID="fcd55073-811e-4a20-8e51-800e855563be" SourceId="1" SourceUrl="http://localhost:58816/LocationCheckerService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

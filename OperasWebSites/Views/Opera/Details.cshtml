@@ -33,6 +33,12 @@
     <span class="display-field">
         @Html.DisplayFor(model => model.CreatedBy)
     </span>
+    <span class="display-label">
+        @Html.DisplayNameFor(model => model.GeocodeResult):
+    </span>
+    <span class="display-field">
+        @Html.DisplayFor(model => model.GeocodeResult)
+    </span>
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")
